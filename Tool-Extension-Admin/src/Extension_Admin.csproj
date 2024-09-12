@@ -1,16 +1,16 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Landis.Extensions</RootNamespace>
-    <AssemblyName>Landis.Extensions</AssemblyName>
-    <TargetFramework>netcoreapp2.0</TargetFramework>
+    <TargetFramework>net8.0</TargetFramework>
     <Platforms>AnyCPU;x64</Platforms>
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
-    <Version>7.0.0</Version>
-    <AssemblyVersion>2.0.0.0</AssemblyVersion>
-    <FileVersion>7.0.0.0</FileVersion>
+    <AssemblyName>Landis.Extensions</AssemblyName>
+    <RootNamespace>Landis.Extensions</RootNamespace>
+    <Version>8.0.0</Version>
+    <AssemblyVersion>8.0.0</AssemblyVersion>
+    <FileVersion>8.0.0</FileVersion>
     <NeutralLanguage>English</NeutralLanguage>
-    <!-- Remove netcoreapp2.0 folder-->
+    <!-- Remove net8 folder-->
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
@@ -18,17 +18,34 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Landis.Core" Version="2.0.0" />
-    <PackageReference Include="Landis.Extensions.Dataset" Version="2.0.0.1" />
-    <PackageReference Include="Landis.SpatialModeling" Version="2.0.0" />
+    <None Remove="Landis.Extensions.runtimeconfig.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Landis.Extensions.runtimeconfig.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Landis.Core" Version="3.0.1" />
+    <PackageReference Include="Landis.Extensions.Dataset" Version="2.0.1" />
+    <PackageReference Include="Landis.SpatialModeling" Version="2.0.1" />
     <PackageReference Include="Landis.Utilities" Version="2.0.0" />
+    <PackageReference Include="Microsoft.NETCore.App" Version="2.2.8" />
     <PackageReference Include="System.Diagnostics.Debug" Version="4.3.0" />
     <PackageReference Include="System.IO.FileSystem" Version="4.3.0" />
     <PackageReference Include="System.Net.NameResolution" Version="4.3.0" />
-    <PackageReference Include="System.Net.Primitives" Version="4.3.0" />
-    <PackageReference Include="System.Runtime.Extensions" Version="4.3.0" />
+    <PackageReference Include="System.Net.Primitives" Version="4.3.1" />
+    <PackageReference Include="System.Runtime.Extensions" Version="4.3.1" />
     <PackageReference Include="System.Runtime.InteropServices" Version="4.3.0" />
     <PackageReference Include="System.Threading" Version="4.3.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="app.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
   <ItemGroup>

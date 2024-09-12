@@ -9,11 +9,11 @@ This is the combined package and installer for the LANDIS-II 'Core'.  The Core a
 - Library-Spatial
 - Library-Utilities
 
-## LANDIS Core-Model-v7: Framework-dependent deployment (FDD)
+## LANDIS Core-Model-v8: Framework-dependent deployment (FDD)
 
-All Core libraries can be accessed via MyGet https://www.myget.org/feed/Packages/landis-ii-v7
+All Core libraries can be accessed via MyGet https://www.myget.org/feed/Packages/landis-ii-v8
 
-## Updates to v7.0
+## Updates
 02.18.2019
 - Assembly name changed from "Landis.RasterIO.Gdal" to "Landis.RasterIO.Gdal.Linux".  The "Landis.RasterIO.Gdal.Linux (2.0.0)" uses [Gdal.Core (1.0.0)](https://www.nuget.org/packages/Gdal.Core/2.3.0-beta-023).  
 
@@ -35,9 +35,9 @@ All Core libraries can be accessed via MyGet https://www.myget.org/feed/Packages
 
 
 
-2. `git clonehttps://github.com/LANDIS-II-Foundation/Core-Model-v7-LINUX.git `
+2. `git clonehttps://github.com/LANDIS-II-Foundation/Core-Model-v8-LINUX.git `
 
-3. `cd /<path to/Core-Model-v7-LINUX/Tool-Console/src`
+3. `cd /<path to/Core-Model-v8-LINUX/Tool-Console/src`
 
 4. `dotnet build -c Release`
 
@@ -75,12 +75,12 @@ All Core libraries can be accessed via MyGet https://www.myget.org/feed/Packages
 
 
 
-## LANDIS-II-v7 Extensions
+## LANDIS-II-v8 Extensions
 
 #### Prerequisites
 
-* All LANDIS-II-v7 supporting libraries and extension DLL must be in `build/extensions` folder.
-* LANDIS-II-v7 Extensions information needs to be included in `build/extensions/extensions.xml`
+* All LANDIS-II-v8 supporting libraries and extension DLL must be in `build/extensions` folder.
+* LANDIS-II-v8 Extensions information needs to be included in `build/extensions/extensions.xml`
 
 
 
@@ -117,21 +117,21 @@ The problem might be GDAL related error if you see error below.
 
 
 
-#### Compiling LANDIS-II-v7 Extensions
+#### Compiling LANDIS-II-v8 Extensions
 
-There are many ways to compile LANDIS-II-v7 Extensions.  This is one of the options.
+There are many ways to compile LANDIS-II-v8 Extensions.  This is one of the options.
 
 Prerequisite: VS Code installation (see in Notes section)
 
-1. `cd /<path to >/Core-Model-v7-LINUX`
+1. `cd /<path to >/Core-Model-v8-LINUX`
 
-2. `git clone <path to LANDIS-II-v7 Extension>.git`
+2. `git clone <path to LANDIS-II-v8 Extension>.git`
 
-3. `git clone https://github.com/LANDIS-II-Foundation/Support-Library-Dlls-v7.git`
+3. `git clone https://github.com/LANDIS-II-Foundation/Support-Library-Dlls-v8.git`
 
 4. Save all supporting libraries in `build/extensions` folder.
 
-5. Edit **<Landis-ii-v7 Extension>.csproj** file
+5. Edit **<Landis-ii-v8 Extension>.csproj** file
 
    1. Add a line below in the first <PropertyGroup> tag (see image below).<AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
 
@@ -161,15 +161,15 @@ Prerequisite: VS Code installation (see in Notes section)
 
 
 
-#### Add LANDIS-II-v7 Extension to extensions.xml
+#### Add LANDIS-II-v8 Extension to extensions.xml
 
 1. `cd <path to where extension information text file direcotry>`
 
-2. `dotnet /<path to>/Core-Model-v7-Linux/build/Release/Landis.Extensions.dll add "<extensions infomation>.txt"`
+2. `dotnet /<path to>/Core-Model-v8-Linux/build/Release/Landis.Extensions.dll add "<extensions infomation>.txt"`
 
    *To remove an extension:*
 
-   `dotnet /<path to>/Core-Model-v7-Linux/build/Release/Landis.Extensions.dll remove "<extensions name (e.g. Age-only Succession)"`
+   `dotnet /<path to>/Core-Model-v8-Linux/build/Release/Landis.Extensions.dll remove "<extensions name (e.g. Age-only Succession)"`
 
 
 </br>
